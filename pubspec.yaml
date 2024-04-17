@@ -19,6 +19,8 @@ dependencies:
   #Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.8
+  flutter_native_splash: ^2.4.0
+  smooth_page_indicator: ^1.1.0
 
   #State Management
   get: ^4.6.6
@@ -34,8 +36,8 @@ flutter:
 
   assets:
     - assets/logos/
-    - assets/icons/
-    - assets/images/
+    - assets/icons/brands/
+    - assets/images/on_boarding_images/
 
   fonts: 
     - family: Poppins
