@@ -45,8 +45,8 @@ class FColors {
 // Neutral Shades
   static const Color black = Color(0xff232323);
   static const Color darkerGrey = Color(0xff4f4f4f);
-  static const Color darkGrey = Color(0xff939393);
-  static const Color grey = Color(0xffe0e0e0);
+  static const Color darkGrey = Color(0xFF818181);
+  static const Color grey = Color(0xFFA8A7A7);
   static const Color softGrey = Color(0xfff4f4f4);
   static const Color lightGrey = Color(0xfff9f9f9);
   static const Color white = Color(0xffffffff);

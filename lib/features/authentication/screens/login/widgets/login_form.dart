@@ -1,6 +1,8 @@
+import 'package:f_store/features/authentication/screens/signup/signup.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class FLoginForm extends StatelessWidget {
@@ -18,20 +20,20 @@ class FLoginForm extends StatelessWidget {
           children: [
             /// Email
             TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.direct_right),
-                labelText: FTexts.email,
-              ),
+              decoration: InputDecoration(
+                  prefixIcon: const Icon(Iconsax.direct_right),
+                  labelText: FTexts.email,
+                  floatingLabelStyle: Theme.of(context).textTheme.labelSmall),
             ),
             const SizedBox(
               height: FSizes.spaceBetweenInputFields,
             ),
             TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
-                suffixIcon: Icon(Iconsax.eye_slash),
-                labelText: FTexts.password,
-              ),
+              decoration: InputDecoration(
+                  prefixIcon: const Icon(Iconsax.password_check),
+                  suffixIcon: const Icon(Iconsax.eye_slash),
+                  labelText: FTexts.password,
+                  floatingLabelStyle: Theme.of(context).textTheme.labelSmall),
             ),
             const SizedBox(
               height: FSizes.spaceBetweenInputFields / 2,
@@ -81,7 +83,9 @@ class FLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const SignupScreen());
+                },
                 child: const Text(FTexts.createAccount),
               ),
             )

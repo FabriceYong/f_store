@@ -1,18 +1,18 @@
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
+import 'package:f_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class FLoginHeader extends StatelessWidget {
   const FLoginHeader({
     super.key,
-    required this.dark,
   });
 
-  final bool dark;
 
   @override
   Widget build(BuildContext context) {
+  final dark = FHelperFunctions.isDarkMode(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
