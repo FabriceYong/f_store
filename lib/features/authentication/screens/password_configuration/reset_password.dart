@@ -1,3 +1,4 @@
+import 'package:f_store/features/authentication/screens/login/login.dart';
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
@@ -57,7 +58,9 @@ class ResetPasswordScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const LoginScreen());
+                  },
                   child: const Text(FTexts.done),
                 ),
               ),
