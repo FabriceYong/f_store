@@ -23,17 +23,18 @@ class FLoginForm extends StatelessWidget {
               decoration: InputDecoration(
                   prefixIcon: const Icon(Iconsax.direct_right),
                   labelText: FTexts.email,
-                  floatingLabelStyle: Theme.of(context).textTheme.labelSmall),
+                  floatingLabelStyle: Theme.of(context).textTheme.labelMedium),
             ),
             const SizedBox(
               height: FSizes.spaceBetweenInputFields,
             ),
             TextFormField(
+              obscureText: true,
               decoration: InputDecoration(
                   prefixIcon: const Icon(Iconsax.password_check),
                   suffixIcon: const Icon(Iconsax.eye_slash),
                   labelText: FTexts.password,
-                  floatingLabelStyle: Theme.of(context).textTheme.labelSmall),
+                  floatingLabelStyle: Theme.of(context).textTheme.labelMedium),
             ),
             const SizedBox(
               height: FSizes.spaceBetweenInputFields / 2,

@@ -1,7 +1,9 @@
 import 'package:f_store/features/authentication/screens/signup/widgets/terms_and_conditions_checkbox.dart';
+import 'package:f_store/features/authentication/screens/signup/widgets/verify_email.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class FSignupForm extends StatelessWidget {
@@ -21,7 +23,7 @@ class FSignupForm extends StatelessWidget {
                   expands: false,
                   decoration: InputDecoration(
                     labelText: FTexts.firstName,
-                    floatingLabelStyle: Theme.of(context).textTheme.labelSmall,
+                    floatingLabelStyle: Theme.of(context).textTheme.labelMedium,
                     prefixIcon: const Icon(Iconsax.user),
                   ),
                 ),
@@ -34,7 +36,7 @@ class FSignupForm extends StatelessWidget {
                   expands: false,
                   decoration: InputDecoration(
                     labelText: FTexts.lastName,
-                    floatingLabelStyle: Theme.of(context).textTheme.labelSmall,
+                    floatingLabelStyle: Theme.of(context).textTheme.labelMedium,
                     prefixIcon: const Icon(Iconsax.user),
                   ),
                 ),
@@ -50,7 +52,7 @@ class FSignupForm extends StatelessWidget {
             decoration: InputDecoration(
               labelText: FTexts.username,
               prefixIcon: const Icon(Iconsax.user_edit),
-              floatingLabelStyle: Theme.of(context).textTheme.labelSmall,
+              floatingLabelStyle: Theme.of(context).textTheme.labelMedium,
             ),
           ),
           const SizedBox(
@@ -61,7 +63,7 @@ class FSignupForm extends StatelessWidget {
           TextFormField(
             decoration: InputDecoration(
               labelText: FTexts.email,
-              floatingLabelStyle: Theme.of(context).textTheme.labelSmall,
+              floatingLabelStyle: Theme.of(context).textTheme.labelMedium,
               prefixIcon: const Icon(Iconsax.direct),
             ),
           ),
@@ -73,7 +75,7 @@ class FSignupForm extends StatelessWidget {
           TextFormField(
             decoration: InputDecoration(
               labelText: FTexts.phoneNo,
-              floatingLabelStyle: Theme.of(context).textTheme.labelSmall,
+              floatingLabelStyle: Theme.of(context).textTheme.labelMedium,
               prefixIcon: const Icon(Iconsax.call),
             ),
           ),
@@ -86,7 +88,7 @@ class FSignupForm extends StatelessWidget {
             obscureText: true,
             decoration: InputDecoration(
               labelText: FTexts.password,
-              floatingLabelStyle: Theme.of(context).textTheme.labelSmall,
+              floatingLabelStyle: Theme.of(context).textTheme.labelMedium,
               prefixIcon: const Icon(Iconsax.password_check),
               suffixIcon: IconButton(
                 onPressed: () {},
@@ -109,7 +111,9 @@ class FSignupForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const VerifyEmail());
+              },
               child: const Text(
                 FTexts.createAccount,
               ),
