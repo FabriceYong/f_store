@@ -35,6 +35,7 @@ class FTexts {
   static const String iAgreeTo = 'I agree to';
   static const String privacyPolicy = 'Privacy policy';
   static const String and = 'And';
+  static const String done = 'Done';
   static const String termsOfUser = 'Terms of Service';
   static const String verificationCode = 'Verification Code';
   static const String resendEmail = 'Resend Email';

@@ -1,3 +1,4 @@
+import 'package:f_store/features/authentication/screens/password_configuration/forgot_password.dart';
 import 'package:f_store/features/authentication/screens/signup/signup.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
@@ -21,7 +22,7 @@ class FLoginForm extends StatelessWidget {
             /// Email
             TextFormField(
               decoration: InputDecoration(
-                  prefixIcon: const Icon(Iconsax.direct_right),
+                  prefixIcon: const Icon(Iconsax.direct),
                   labelText: FTexts.email,
                   floatingLabelStyle: Theme.of(context).textTheme.labelMedium),
             ),
@@ -58,7 +59,9 @@ class FLoginForm extends StatelessWidget {
 
                 /// Forgot Password
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const ForgotPasswordScreen());
+                  },
                   child: const Text(FTexts.forgotPassword),
                 ),
               ],
