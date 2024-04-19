@@ -17,6 +17,7 @@ class FColors {
 //Text Colors
   static const Color textPrimary = Color(0xff333333);
   static const Color textSecondary = Colors.white;
+  static const Color textWhite = Color(0xFFF5F5F5);
 
 // background colors.
   static const Color light = Color(0xfff6f6f6);

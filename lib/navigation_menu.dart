@@ -22,7 +22,7 @@ class NavigationMenu extends StatelessWidget {
               ? FColors.white.withOpacity(0.1)
               : FColors.black.withOpacity(0.1),
           elevation: 0.0,
-          height: 70,
+          height: 60,
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) {
             controller.selectedIndex.value = index;
