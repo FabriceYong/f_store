@@ -30,8 +30,10 @@ class FPrimaryHeaderContainer extends StatelessWidget {
                 right: -300,
                 child: FCircularContainer(
                     backgroundColor: FColors.textWhite.withOpacity(0.2)),
-              )
+              ),
+              child,
             ],
+              
           ),
         ),
       ),
