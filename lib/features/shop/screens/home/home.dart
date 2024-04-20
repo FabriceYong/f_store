@@ -1,10 +1,17 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:f_store/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:f_store/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:f_store/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:f_store/common/widgets/images/rounded_image.dart';
 import 'package:f_store/common/widgets/texts/section_heading.dart';
 import 'package:f_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:f_store/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:f_store/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:f_store/utils/constants/colors.dart';
+import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -59,7 +66,18 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Text('Hello world')
+
+            /// Body
+            Padding(
+              padding: EdgeInsets.all(FSizes.defaultSpace),
+              child: FHomePromoCarouselSlider(
+                banners: [
+                  FImages.promoBanner1,
+                  FImages.promoBanner2,
+                  FImages.promoBanner3
+                ],
+              ),
+            ),
           ],
         ),
       ),
