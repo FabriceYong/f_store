@@ -3,6 +3,8 @@ import 'package:f_store/common/widgets/custom_shapes/containers/circular_contain
 import 'package:f_store/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:f_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:f_store/common/widgets/images/rounded_image.dart';
+import 'package:f_store/common/widgets/layouts/grid_layout.dart';
+import 'package:f_store/common/widgets/products/cart/product_cart/product_cart_vertical.dart';
 import 'package:f_store/common/widgets/texts/section_heading.dart';
 import 'package:f_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:f_store/features/shop/screens/home/widgets/home_categories.dart';
@@ -19,12 +21,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
-            FPrimaryHeaderContainer(
+            const FPrimaryHeaderContainer(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -69,12 +71,27 @@ class HomeScreen extends StatelessWidget {
 
             /// Body
             Padding(
-              padding: EdgeInsets.all(FSizes.defaultSpace),
-              child: FHomePromoCarouselSlider(
-                banners: [
-                  FImages.promoBanner1,
-                  FImages.promoBanner2,
-                  FImages.promoBanner3
+              padding: const EdgeInsets.all(FSizes.defaultSpace),
+              child: Column(
+                children: [
+                  const FHomePromoCarouselSlider(
+                    banners: [
+                      FImages.promoBanner1,
+                      FImages.promoBanner2,
+                      FImages.promoBanner3
+                    ],
+                  ),
+                  const SizedBox(
+                    height: FSizes.spaceBetweenItems,
+                  ),
+
+                  /// Vertical product cart
+                  FGridLayout(
+                    itemCount: 4,
+                    mainAxisExtent: 288,
+                    itemBuilder: (context, index) =>
+                        const FProductCartVertical(),
+                  ),
                 ],
               ),
             ),

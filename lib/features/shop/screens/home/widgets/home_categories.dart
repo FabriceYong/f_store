@@ -1,4 +1,5 @@
 import 'package:f_store/common/widgets/image_text_widget/vertical_image_text.dart';
+import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,9 @@ class FHomeCategories extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return FVerticalImageText(
+            backgroundColor: Theme.of(context).brightness == Brightness.dark
+                ? FColors.dark
+                : FColors.light,
             image: FImages.shoes,
             title: 'Shoes',
             onTap: () {},
