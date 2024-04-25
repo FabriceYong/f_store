@@ -1,4 +1,3 @@
-import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,7 @@ class FRoundedImage extends StatelessWidget {
     required this.imageUrl,
     this.applyImageRadius = false,
     this.border,
-    this.backgroundColor = FColors.light,
+    this.backgroundColor,
     this.fit = BoxFit.cover,
     this.padding,
     this.onPressed,
@@ -22,7 +21,7 @@ class FRoundedImage extends StatelessWidget {
   final String imageUrl;
   final bool applyImageRadius, isNetWorkImage;
   final BoxBorder? border;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final VoidCallback? onPressed;

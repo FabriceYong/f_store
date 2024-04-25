@@ -1,4 +1,6 @@
 import 'package:f_store/features/shop/screens/home/home.dart';
+import 'package:f_store/features/shop/screens/store/store.dart';
+import 'package:f_store/features/shop/screens/wishlist/wishlist.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -48,12 +50,8 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.orange,
-    ),
+    const StoreScreen(),
+    const WishList(),
     Container(
       color: Colors.blue,
     )

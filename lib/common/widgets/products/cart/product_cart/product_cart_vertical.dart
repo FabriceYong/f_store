@@ -2,14 +2,14 @@ import 'package:f_store/common/icons/circular_icon.dart';
 import 'package:f_store/common/styles/shadow_styles.dart';
 import 'package:f_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:f_store/common/widgets/images/rounded_image.dart';
+import 'package:f_store/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:f_store/common/widgets/texts/product_price.dart';
 import 'package:f_store/common/widgets/texts/product_title_text.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 
 class FProductCartVertical extends StatelessWidget {
@@ -30,6 +30,7 @@ class FProductCartVertical extends StatelessWidget {
               : FColors.white,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             /// Thumbnail, Wishlist button, Discount Tag
             FRoundedContainer(
@@ -63,8 +64,11 @@ class FProductCartVertical extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  /// Favourite Icon Button
                   const Positioned(
                     right: 0.0,
+                    top: 0.0,
                     child: FCircularIcon(
                       icon: Iconsax.heart5,
                       color: Colors.red,
@@ -74,74 +78,66 @@ class FProductCartVertical extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(
-              height: FSizes.spaceBetweenItems / 2,
+            const Gap(
+              FSizes.spaceBetweenItems / 2,
             ),
 
             /// Details
-            Padding(
-              padding: const EdgeInsets.only(left: FSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: FSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const FProductTitleText(
+                  FProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(
-                    height: FSizes.spaceBetweenItems / 2,
+                  Gap(
+                    FSizes.spaceBetweenItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        height: FSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: FColors.primary,
-                        size: FSizes.iconXs,
-                      )
-                    ],
+                  FBrandTitleWithVerifiedIcon(
+                    title: 'Nike',
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      /// product price
-                      const FProductPriceText(
-                        price: '35.0',
-                      ),
-
-                      /// Icon Container
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: FColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(FSizes.cardRadiusMd),
-                            bottomRight:
-                                Radius.circular(FSizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: FSizes.iconLg * 1.2,
-                          height: FSizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(
-                              Iconsax.add,
-                              color: FColors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
+            ),
+
+            const Spacer(),
+            // const Gap(18),
+
+            /// Price Row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                /// product price
+                const Padding(
+                  padding: EdgeInsets.only(left: FSizes.sm),
+                  child: FProductPriceText(
+                    price: '35.0',
+                  ),
+                ),
+
+                /// Icon Container
+                Container(
+                  decoration: const BoxDecoration(
+                    color: FColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(FSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(FSizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: FSizes.iconLg * 1.2,
+                    height: FSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(
+                        Iconsax.add,
+                        color: FColors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             )
           ],
         ),

@@ -32,6 +32,7 @@ class FCircularIcon extends StatelessWidget {
                 : FColors.white.withOpacity(0.9),
       ),
       child: IconButton(
+        padding: EdgeInsets.zero,
         onPressed: onPressed,
         icon: Icon(
           icon,

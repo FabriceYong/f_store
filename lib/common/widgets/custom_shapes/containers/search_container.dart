@@ -3,21 +3,24 @@ import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/device/device_utility.dart';
 import 'package:f_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class FSearchContainer extends StatelessWidget {
-  const FSearchContainer({
-    super.key,
-    required this.text,
-    this.icon,
-    this.onTap,
-    this.showBackground = true,
-    this.showBorder = false,
-  });
+  const FSearchContainer(
+      {super.key,
+      required this.text,
+      this.icon = Iconsax.search_normal,
+      this.onTap,
+      this.showBackground = true,
+      this.showBorder = false,
+      this.padding =
+          const EdgeInsets.symmetric(horizontal: FSizes.defaultSpace)});
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
   final VoidCallback? onTap;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class FSearchContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: FSizes.defaultSpace),
+        padding: padding!,
         child: Container(
           width: FDeviceUtils.getScreenWidth(context),
           padding: const EdgeInsets.all(FSizes.md),
