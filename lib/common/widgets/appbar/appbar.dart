@@ -1,8 +1,9 @@
+import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/device/device_utility.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class FAppBar extends StatelessWidget implements PreferredSizeWidget {
   const FAppBar(
@@ -24,15 +25,29 @@ class FAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: FSizes.md),
       child: AppBar(
+        foregroundColor: Theme.of(context).brightness == Brightness.dark
+            ? FColors.light
+            : FColors.dark,
         centerTitle: centerTitle,
         automaticallyImplyLeading: false,
         leading: showBackArrow
             ? IconButton(
                 onPressed: () => Get.back(),
-                icon: const Icon(Iconsax.arrow_left))
+                icon: Icon(
+                  CupertinoIcons.back,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? FColors.light
+                      : FColors.dark,
+                ))
             : leadingIcon != null
                 ? IconButton(
-                    onPressed: leadingOnPressed, icon: Icon(leadingIcon))
+                    onPressed: leadingOnPressed,
+                    icon: Icon(
+                      leadingIcon,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? FColors.light
+                          : FColors.dark,
+                    ))
                 : null,
         title: title,
         actions: actions,

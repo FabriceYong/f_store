@@ -3,9 +3,7 @@ import 'package:f_store/common/widgets/login_signup/social_buttons.dart';
 import 'package:f_store/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -32,7 +30,7 @@ class SignupScreen extends StatelessWidget {
               ),
 
               /// Sigup Form
-              FSignupForm(),
+              const FSignupForm(),
 
               const SizedBox(
                 height: FSizes.spaceBetweenSections,

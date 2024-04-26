@@ -1,3 +1,4 @@
+import 'package:f_store/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class FSectionHeading extends StatelessWidget {
@@ -22,10 +23,10 @@ class FSectionHeading extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .apply(color: textColor),
+          style: Theme.of(context).textTheme.headlineSmall!.apply(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? FColors.light
+                  : FColors.dark),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),

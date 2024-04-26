@@ -48,7 +48,7 @@ class FColors {
   static const Color darkerGrey = Color(0xff4f4f4f);
   static const Color darkGrey = Color(0xFF818181);
   static const Color grey = Color(0xFFA8A7A7);
-  static const Color softGrey = Color(0xfff4f4f4);
-  static const Color lightGrey = Color(0xfff9f9f9);
+  static const Color softGrey = Color(0xFFEEEEEE);
+  static const Color lightGrey = Color(0xFFE7E7E7);
   static const Color white = Color(0xffffffff);
 }

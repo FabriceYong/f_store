@@ -5,7 +5,6 @@ import 'package:f_store/features/authentication/screens/login/widgets/login_head
 import 'package:f_store/common/widgets/login_signup/social_buttons.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
