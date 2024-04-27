@@ -13,15 +13,16 @@ class FBottomAddToCart extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(
           horizontal: FSizes.defaultSpace, vertical: FSizes.defaultSpace / 2),
-      decoration: BoxDecoration(
-        color: Theme.of(context).brightness == Brightness.dark
-            ? FColors.darkerGrey
-            : FColors.light,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(FSizes.cardRadiusLg),
-          topRight: Radius.circular(FSizes.cardRadiusLg),
-        ),
-      ),
+      // decoration: BoxDecoration(
+      //   color: Theme.of(context).brightness == Brightness.dark
+      //       ? FColors.darkerGrey
+      //       : FColors.light,
+      //   borderRadius: const BorderRadius.only(
+      //     topLeft: Radius.circular(FSizes.cardRadiusLg),
+      //     topRight: Radius.circular(FSizes.cardRadiusLg),
+      //   ),
+      // ),
+      color: Colors.transparent,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -51,7 +52,7 @@ class FBottomAddToCart extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(FSizes.md),
+              padding: const EdgeInsets.all(FSizes.sm * 1.5),
               backgroundColor: FColors.black,
               side: const BorderSide(color: FColors.black),
             ),

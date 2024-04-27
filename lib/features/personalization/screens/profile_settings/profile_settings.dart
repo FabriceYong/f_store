@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+class UserProfileScreen extends StatelessWidget {
+  const UserProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,10 +4,12 @@ import 'package:f_store/features/shop/screens/product_details/widget/product_att
 import 'package:f_store/features/shop/screens/product_details/widget/product_details_image.dart';
 import 'package:f_store/features/shop/screens/product_details/widget/product_meta_data.dart';
 import 'package:f_store/features/shop/screens/product_details/widget/ratings_and_share.dart';
+import 'package:f_store/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -61,8 +63,8 @@ class FProductDetails extends StatelessWidget {
                     'This is a Product description for White Nike Jordans, there are things that could be added but i just added a few for now',
                     trimLines: 2,
                     trimMode: TrimMode.Line,
-                    trimCollapsedText: ' Show more',
-                    trimExpandedText: ' Less',
+                    trimCollapsedText: ' read more',
+                    trimExpandedText: ' show less',
                     moreStyle:
                         TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                     lessStyle:
@@ -84,13 +86,14 @@ class FProductDetails extends StatelessWidget {
                         showActionButton: false,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(const FProductReviews());
+                        },
                         icon: const Icon(
                           Iconsax.arrow_right_3,
                           size: 18,
                         ),
                       ),
-                      const Gap(FSizes.spaceBetweenItems),
                     ],
                   )
                 ],

@@ -60,7 +60,9 @@ class HomeScreen extends StatelessWidget {
                         FHomeCategories()
                       ],
                     ),
-                  )
+                  ),
+
+                  Gap(FSizes.spaceBetweenSections),
                 ],
               ),
             ),

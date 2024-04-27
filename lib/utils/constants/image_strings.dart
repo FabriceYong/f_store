@@ -202,4 +202,12 @@ class FImages {
 
   /// user avatar
   static const String user_avatar = 'assets/images/products/user_avatar.png';
+
+  /// -- Product Reviews
+  static const String userProfileImage1 =
+      'assets/images/reviews/review_profile_image_1.jpg';
+  static const String userProfileImage2 =
+      'assets/images/reviews/review_profile_image_2.jpeg';
+  static const String userProfileImage3 =
+      'assets/images/reviews/review_profile_image_3.jpeg';
 }

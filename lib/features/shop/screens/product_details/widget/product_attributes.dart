@@ -98,8 +98,13 @@ class FProductAttributes extends StatelessWidget {
             Wrap(
               children: [
                 FChoiceChip(
-                  text: 'Green',
+                  text: 'White',
                   selected: true,
+                  onSelected: (value) {},
+                ),
+                FChoiceChip(
+                  text: 'Green',
+                  selected: false,
                   onSelected: (value) {},
                 ),
                 FChoiceChip(

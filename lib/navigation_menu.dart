@@ -1,4 +1,4 @@
-import 'package:f_store/features/personalization/screens/profile_settings/profile_settings.dart';
+import 'package:f_store/features/personalization/screens/settings/settings.dart';
 import 'package:f_store/features/shop/screens/home/home.dart';
 import 'package:f_store/features/shop/screens/store/store.dart';
 import 'package:f_store/features/shop/screens/wishlist/wishlist.dart';
@@ -20,7 +20,8 @@ class NavigationMenu extends StatelessWidget {
       bottomNavigationBar: Obx(
         // observer
         () => NavigationBar(
-          backgroundColor: dark ? FColors.black : FColors.white,
+          // backgroundColor: dark ? FColors.black : FColors.white,
+          backgroundColor: Colors.transparent,
           indicatorColor: dark
               ? FColors.white.withOpacity(0.1)
               : FColors.black.withOpacity(0.1),
