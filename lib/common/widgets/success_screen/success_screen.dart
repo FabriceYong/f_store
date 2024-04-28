@@ -1,11 +1,8 @@
 import 'package:f_store/common/styles/spacing_styles.dart';
-import 'package:f_store/features/authentication/screens/login/login.dart';
-import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
 import 'package:f_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen(
@@ -31,7 +28,7 @@ class SuccessScreen extends StatelessWidget {
             children: [
               /// Image
               Image(
-                image: const AssetImage(FImages.staticSuccessIllustration),
+                image: AssetImage(image),
                 width: FHelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(
@@ -40,7 +37,7 @@ class SuccessScreen extends StatelessWidget {
 
               /// Title & SubTitle
               Text(
-                FTexts.yourAccountCreatedTitle,
+                title,
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
@@ -48,7 +45,7 @@ class SuccessScreen extends StatelessWidget {
                 height: FSizes.spaceBetweenItems,
               ),
               Text(
-                FTexts.yourAccountCreatedSubTitle,
+                subTitle,
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
@@ -58,9 +55,7 @@ class SuccessScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Get.offAll(() => const LoginScreen());
-                  },
+                  onPressed: onPressed,
                   child: const Text(FTexts.tContinue),
                 ),
               )

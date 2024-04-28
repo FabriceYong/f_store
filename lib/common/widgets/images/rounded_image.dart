@@ -10,7 +10,7 @@ class FRoundedImage extends StatelessWidget {
     this.applyImageRadius = false,
     this.border,
     this.backgroundColor,
-    this.fit = BoxFit.cover,
+    this.fit = BoxFit.contain,
     this.padding,
     this.onPressed,
     this.isNetWorkImage = false,

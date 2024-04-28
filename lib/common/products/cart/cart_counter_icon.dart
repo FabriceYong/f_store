@@ -18,11 +18,15 @@ class FCartCounterIcon extends StatelessWidget {
       children: [
         IconButton(
           onPressed: onPressed,
-          icon: const Icon(Iconsax.shopping_bag),
+          icon: const Icon(
+            Iconsax.shopping_bag,
+            size: 20,
+          ),
           color: iconColor,
         ),
         Positioned(
-          right: 0,
+          right: 5,
+          top: 5,
           child: Container(
             width: 18.0,
             height: 18.0,

@@ -3,7 +3,17 @@ import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/widgets.dart';
 
 class FRoundedContainer extends StatelessWidget {
-  const FRoundedContainer({super.key, this.child, this.width, this.height, this.margin, this.padding, this.showBorder = false, this.radius = FSizes.cardRadiusLg, this.backgroundColor = FColors.white, this.borderColor = FColors.borderPrimary});
+  const FRoundedContainer(
+      {super.key,
+      this.child,
+      this.width,
+      this.height,
+      this.margin,
+      this.padding,
+      this.showBorder = false,
+      this.radius = FSizes.cardRadiusLg,
+      this.backgroundColor,
+      this.borderColor = FColors.borderPrimary});
 
   final double? width;
   final double? height;
@@ -11,7 +21,7 @@ class FRoundedContainer extends StatelessWidget {
   final Widget? child;
   final bool showBorder;
   final Color borderColor;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
 
