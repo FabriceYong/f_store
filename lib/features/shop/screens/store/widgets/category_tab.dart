@@ -1,6 +1,6 @@
 import 'package:f_store/common/widgets/brands/brand_show_case.dart';
 import 'package:f_store/common/widgets/layouts/grid_layout.dart';
-import 'package:f_store/common/widgets/products/cart/product_cart/product_cart_vertical.dart';
+import 'package:f_store/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:f_store/common/widgets/texts/section_heading.dart';
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
@@ -41,7 +41,7 @@ class FCategoryTab extends StatelessWidget {
 
               FGridLayout(
                 itemCount: 4,
-                itemBuilder: (context, index) => const FProductCartVertical(),
+                itemBuilder: (context, index) => const FProductCardVertical(),
               ),
               const Gap(FSizes.spaceBetweenSections)
             ],

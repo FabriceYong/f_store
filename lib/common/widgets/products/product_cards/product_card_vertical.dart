@@ -14,8 +14,8 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class FProductCartVertical extends StatelessWidget {
-  const FProductCartVertical({super.key});
+class FProductCardVertical extends StatelessWidget {
+  const FProductCardVertical({super.key});
 
   @override
   Widget build(BuildContext context) {

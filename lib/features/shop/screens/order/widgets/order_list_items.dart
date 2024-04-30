@@ -1,7 +1,6 @@
 import 'package:f_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
-import 'package:f_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';

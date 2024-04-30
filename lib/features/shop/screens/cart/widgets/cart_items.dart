@@ -1,5 +1,5 @@
-import 'package:f_store/common/widgets/products/cart/product_cart/add_and_remove_button.dart';
-import 'package:f_store/common/widgets/products/cart/product_cart/cart_item.dart';
+import 'package:f_store/common/widgets/products/cart/add_and_remove_button.dart';
+import 'package:f_store/common/widgets/products/cart/cart_item.dart';
 import 'package:f_store/common/widgets/texts/product_price.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';

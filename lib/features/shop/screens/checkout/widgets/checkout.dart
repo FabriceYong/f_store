@@ -1,6 +1,6 @@
 import 'package:f_store/common/widgets/appbar/appbar.dart';
 import 'package:f_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:f_store/common/widgets/products/cart/product_cart/coupon_widget.dart';
+import 'package:f_store/common/widgets/products/cart/coupon_widget.dart';
 import 'package:f_store/common/widgets/success_screen/success_screen.dart';
 import 'package:f_store/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:f_store/features/shop/screens/checkout/widgets/billing_address_section.dart';

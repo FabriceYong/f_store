@@ -1,8 +1,9 @@
 import 'package:f_store/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:f_store/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:f_store/common/widgets/layouts/grid_layout.dart';
-import 'package:f_store/common/widgets/products/cart/product_cart/product_cart_vertical.dart';
+import 'package:f_store/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:f_store/common/widgets/texts/section_heading.dart';
+import 'package:f_store/features/shop/screens/all_products/all_products.dart';
 import 'package:f_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:f_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:f_store/features/shop/screens/home/widgets/promo_slider.dart';
@@ -10,6 +11,7 @@ import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -86,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                   /// Products cart header
                   FSectionHeading(
                     title: 'Popular Products',
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProducts()),
                   ),
                   const Gap(FSizes.spaceBetweenItems),
 
@@ -94,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                   FGridLayout(
                     itemCount: 4,
                     itemBuilder: (context, index) =>
-                        const FProductCartVertical(),
+                        const FProductCardVertical(),
                   ),
                 ],
               ),
