@@ -31,7 +31,8 @@ class FLoaders {
     Get.snackbar(title, message,
         isDismissible: true,
         shouldIconPulse: true,
-        colorText: FColors.primary,
+        colorText: FColors.white,
+        backgroundColor: FColors.primary,
         snackPosition: SnackPosition.BOTTOM,
         duration: Duration(seconds: duration),
         margin: const EdgeInsets.all(20),
@@ -66,7 +67,7 @@ class FLoaders {
       colorText: FColors.white,
       backgroundColor: Colors.red,
       snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 5),
       icon: const Icon(Icons.error_outline, color: FColors.white),
     );
   }

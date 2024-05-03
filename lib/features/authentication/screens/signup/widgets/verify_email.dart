@@ -1,6 +1,6 @@
 import 'package:f_store/common/styles/spacing_styles.dart';
-import 'package:f_store/common/widgets/success_screen/success_screen.dart';
-import 'package:f_store/features/authentication/screens/login/login.dart';
+import 'package:f_store/data/repositories/authentication_repository/authentication_repository.dart';
+import 'package:f_store/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
@@ -10,16 +10,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class VerifyEmail extends StatelessWidget {
-  const VerifyEmail({super.key});
+  const VerifyEmail({super.key, this.email});
+
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => Get.offAll(() => const LoginScreen()),
+            onPressed: () => AuthenticationRepository.instance.logout(),
             icon: const Icon(CupertinoIcons.clear),
           ),
         ],
@@ -49,7 +52,7 @@ class VerifyEmail extends StatelessWidget {
               ),
 
               Text(
-                'fabrice@gmail.com',
+                email ?? '',
                 style: Theme.of(context).textTheme.labelLarge,
               ),
               const SizedBox(
@@ -69,25 +72,14 @@ class VerifyEmail extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Get.offAll(
-                      () => SuccessScreen(
-                        image: FImages.staticSuccessIllustration,
-                        title: FTexts.yourAccountCreatedTitle,
-                        subTitle: FTexts.yourAccountCreatedSubTitle,
-                        onPressed: () => Get.offAll(
-                          () => const LoginScreen(),
-                        ),
-                      ),
-                    );
-                  },
+                  onPressed: () => controller.checkEmailVerifiedStatus(),
                   child: const Text(FTexts.tContinue),
                 ),
               ),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.sendEmailVerification(),
                   child: const Text(
                     FTexts.resendEmail,
                   ),

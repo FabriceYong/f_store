@@ -1,3 +1,4 @@
+import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/formatters/formatter.dart';
 
 /// Model class representing user data or information
@@ -60,7 +61,8 @@ class UserModel {
       'Username': username,
       'Email': email,
       'PhoneNumber': phoneNumber,
-      'ProfilePicture': profilePicture,
+      'ProfilePicture':
+          profilePicture == '' ? FImages.user_avatar : profilePicture,
     };
   }
 

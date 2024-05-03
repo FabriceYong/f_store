@@ -2,7 +2,6 @@ import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:lottie/lottie.dart';
 
 /// A widget for displaying on animated loading indicator
 class FAnimationLoaderWidget extends StatelessWidget {
@@ -33,10 +32,21 @@ class FAnimationLoaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(animation,
-              width: MediaQuery.of(context).size.width *
-                  .8), // Display Lottie animation
+          Image(
+            fit: BoxFit.contain,
+            // animate: true,
+            width: MediaQuery.of(context).size.width * .8,
+            // height: MediaQuery.of(context).size.height * .8,
+            image: AssetImage(
+              animation,
+            ),
+          ),
+          // Lottie.asset(animation,
+          //     fit: BoxFit.contain,
+          //     width: MediaQuery.of(context).size.width *
+          //         .8), // Display Lottie animation
           const Gap(FSizes.defaultSpace),
           Text(
             text,

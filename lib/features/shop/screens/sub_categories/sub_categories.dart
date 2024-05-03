@@ -2,10 +2,12 @@ import 'package:f_store/common/widgets/appbar/appbar.dart';
 import 'package:f_store/common/widgets/images/rounded_image.dart';
 import 'package:f_store/common/widgets/products/product_cards/product_cards_horizontal.dart';
 import 'package:f_store/common/widgets/texts/section_heading.dart';
+import 'package:f_store/features/authentication/screens/login/login.dart';
 import 'package:f_store/utils/constants/image_strings.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
 class SubCategoriesScreen extends StatelessWidget {
   const SubCategoriesScreen({super.key});
@@ -39,8 +41,9 @@ class SubCategoriesScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       separatorBuilder: (_, __) =>
                           const Gap(FSizes.spaceBetweenItems),
-                      itemBuilder: (context, index) =>
-                          const FProductCardHorizontal(),
+                      itemBuilder: (context, index) => FProductCardHorizontal(
+                        onTap: () => Get.to(() => const LoginScreen()),
+                      ),
                     ),
                   ),
                   const Gap(FSizes.spaceBetweenSections * .7),
