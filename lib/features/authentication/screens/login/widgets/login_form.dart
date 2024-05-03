@@ -4,6 +4,7 @@ import 'package:f_store/navigation_menu.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -38,8 +39,8 @@ class FLoginForm extends StatelessWidget {
                   labelText: FTexts.password,
                   floatingLabelStyle: Theme.of(context).textTheme.labelMedium),
             ),
-            const SizedBox(
-              height: FSizes.spaceBetweenInputFields / 2,
+            const Gap(
+              FSizes.spaceBetweenInputFields / 2,
             ),
 
             /// Remember Me and Forget Password
@@ -67,8 +68,8 @@ class FLoginForm extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: FSizes.spaceBetweenSections,
+            const Gap(
+              FSizes.spaceBetweenSections,
             ),
 
             /// Sign In Button
@@ -82,8 +83,8 @@ class FLoginForm extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(
-              height: FSizes.spaceBetweenItems,
+            const Gap(
+              FSizes.spaceBetweenItems,
             ),
 
             /// Create Account Button

@@ -1,4 +1,5 @@
 import 'package:f_store/common/widgets/texts/section_heading.dart';
+import 'package:f_store/features/shop/screens/checkout/widgets/checkout.dart';
 import 'package:f_store/features/shop/screens/product_details/widget/bottom_add_to_cart.dart';
 import 'package:f_store/features/shop/screens/product_details/widget/product_attributes.dart';
 import 'package:f_store/features/shop/screens/product_details/widget/product_details_image.dart';
@@ -47,7 +48,9 @@ class FProductDetails extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const Checkout());
+                      },
                       child: const Text('Checkout'),
                     ),
                   ),

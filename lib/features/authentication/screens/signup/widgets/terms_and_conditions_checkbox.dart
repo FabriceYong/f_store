@@ -1,8 +1,10 @@
+import 'package:f_store/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
 import 'package:f_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FTermsAndConditionsCheckbox extends StatelessWidget {
   const FTermsAndConditionsCheckbox({
@@ -12,11 +14,15 @@ class FTermsAndConditionsCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = FHelperFunctions.isDarkMode(context);
+    final controller = SignupController.instance;
     return Row(
       children: [
-        Checkbox(
-          value: true,
-          onChanged: (value) {},
+        Obx(
+          () => Checkbox(
+            value: controller.privacyPolicy.value,
+            onChanged: (value) => controller.privacyPolicy.value =
+                !controller.privacyPolicy.value,
+          ),
         ),
         const SizedBox(
           height: FSizes.spaceBetweenItems,

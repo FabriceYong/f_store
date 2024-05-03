@@ -58,4 +58,11 @@ class FValidator {
   }
 
   // Add more custom validators as needed for your specific project.
+  /// Empty Text Validation
+  static String? validateEmptyText(String? fieldName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName is required';
+    }
+    return null;
+  }
 }

@@ -1,0 +1,9 @@
+Do the following to add android fingerprint to your android app
+
+1. Download and install the Java Developer Kit (jdk.exe) EXE 
+2. On the command prompt, set the file path to the environment variables using this command 
+set PATH=C:\Program Files\Java\your-jdk-version\bin
+Or add the file path to the environment variables directly
+
+3. Then in the root of your project, run the following command to add android finger print to your flutter app
+keytool -list -V -keystore "\C:\Users\Username\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
