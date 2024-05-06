@@ -64,7 +64,7 @@ class FPlatformException implements Exception {
 
       // Add more cases as needed...
       default:
-        return 'An unexpected plaform error occurred. Please try again';
+        return 'An unexpected platform error occurred. Please try again';
     }
   }
 }

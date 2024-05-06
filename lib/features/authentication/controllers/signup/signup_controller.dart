@@ -31,7 +31,8 @@ class SignupController extends GetxController {
     try {
       // Start Loading,
       FFullSCreenLoader.openLoadingDialog(
-         'We are processing your information, this will take just a few seconds', FImages.processing);
+          'We are processing your information, this will take just a few seconds',
+          FImages.processing);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -53,6 +54,7 @@ class SignupController extends GetxController {
             title: 'Accept Privacy Policy',
             message:
                 'Please read and accept our privacy policy so we can proceed to creating your account');
+        FFullSCreenLoader.stopLoading();
         return;
       }
 
@@ -84,7 +86,9 @@ class SignupController extends GetxController {
           message: 'Your account has been created! Verify email to continue');
 
       // Move to Verify Email Screen
-      Get.to(() => VerifyEmail(email: email.text.trim(),));
+      Get.to(() => VerifyEmail(
+            email: email.text.trim(),
+          ));
     } catch (e) {
       // Remove Loader
       FFullSCreenLoader.stopLoading();

@@ -22,7 +22,7 @@ class FFormatException implements Exception {
       /// Invalid email format Exception
       case 'invalid-email-format':
         return const FFormatException(
-            'The email address format is invali. Please enter a valid email');
+            'The email address format is invalid. Please enter a valid email');
 
       /// Invalid phone number format Exception
       case 'invalid-phone-number-format':

@@ -3,11 +3,13 @@ import 'package:f_store/common/widgets/custom_shapes/containers/primary_header_c
 import 'package:f_store/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:f_store/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:f_store/common/widgets/texts/section_heading.dart';
+import 'package:f_store/data/repositories/authentication_repository/authentication_repository.dart';
 import 'package:f_store/features/personalization/screens/address/widgets/address.dart';
 import 'package:f_store/features/shop/screens/cart/cart.dart';
 import 'package:f_store/features/shop/screens/order/order_screen.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/sizes.dart';
+import 'package:f_store/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -18,6 +20,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AuthenticationRepository());
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -143,7 +147,19 @@ class SettingsScreen extends StatelessWidget {
                       value: false,
                       onChanged: (value) {},
                     ),
-                  )
+                  ),
+                  const Gap(FSizes.spaceBetweenSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 17),
+                          backgroundColor: Colors.transparent),
+                      onPressed: () => controller.logout(),
+                      child: const Text(FTexts.logout),
+                    ),
+                  ),
+                  const Gap(FSizes.defaultSpace),
                 ],
               ),
             ),

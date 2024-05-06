@@ -28,6 +28,7 @@ class FTexts {
   static const String rememberMe = 'Remember Me';
   static const String forgotPassword = 'Forgot Password';
   static const String signIn = 'Sign In';
+  static const String logout = 'Logout';
   static const String createAccount = 'Create Account';
   static const String signInWith = 'Sign in with';
   static const String signUpWith = 'Sign up with';

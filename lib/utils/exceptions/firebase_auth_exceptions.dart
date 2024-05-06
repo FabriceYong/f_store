@@ -27,7 +27,7 @@ class FFirebaseAuthException implements Exception {
 
       /// User not found Exception
       case 'user-not-found':
-        return 'Invalid login details. Use not found';
+        return 'Invalid login details. User not found';
 
       /// Wrong Password Exception
       case 'wrong-password':
@@ -95,7 +95,7 @@ class FFirebaseAuthException implements Exception {
 
       /// Invalid credential Exception
       case 'invalid-credential':
-        return 'The supplied credential is malformed or has expired';
+      return 'The supplied credential is malformed or has expired, Please try again';
 
       /// User token revoked Exception
       case 'user-token-revoked':
@@ -159,7 +159,7 @@ class FFirebaseAuthException implements Exception {
 
       /// User token mismatch Exception
       case 'user-token-mismatch':
-        return 'The provided user\'s token has a mismatch with the aunthenticated user\'s user ID';
+        return 'The provided user\'s token has a mismatch with the authenticated user\'s user ID';
 
       /// Web storage unsupported Exception
       case 'web-storage-unsupported':
@@ -179,7 +179,7 @@ class FFirebaseAuthException implements Exception {
 
       /// Internal error Exception
       case 'internal-error':
-        return 'An internal authentication error occured. Please try again later.';
+        return 'An internal authentication error occurred. Please try again later.';
 
       /// INVALID LOGIN CREDENTIAL EXCEPTION
       case 'INVALID_LOGIN_CREDENTIAL':

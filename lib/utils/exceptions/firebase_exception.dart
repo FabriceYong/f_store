@@ -23,7 +23,7 @@ class FFirebaseException implements Exception {
 
       /// User disabled Exception
       case 'user-disabled':
-        return 'The user acount has been disabled.';
+        return 'The user account has been disabled.';
 
       /// User not found Exception
       case 'user-not-found':
@@ -34,7 +34,7 @@ class FFirebaseException implements Exception {
         return 'The email address provided is invalid. Please enter a valid email';
 
       /// Email already in use Exception
-      case 'email-alread-in-use':
+      case 'email-already-in-use':
         return 'The email address is already registered. Please use a different email.';
 
       /// Wrong password Exception
@@ -111,7 +111,7 @@ class FFirebaseException implements Exception {
 
       /// Missing iframe end Exception
       case 'missing-iframe-src':
-        return 'The email template is mssing the iframe src attribute.';
+        return 'The email template is missing the iframe src attribute.';
 
       /// Auth-domain-config-required Exception
       case 'auth-domain-config-required':
@@ -151,7 +151,7 @@ class FFirebaseException implements Exception {
 
       /// Invalid recipient Email Exception
       case 'invalid-recipient-email':
-        return 'The recepient email address is invalid. Please provide a valid recipient email';
+        return 'The recipient email address is invalid. Please provide a valid recipient email';
 
       /// Missing action code Exception
       case 'missing-action-code':
