@@ -95,7 +95,7 @@ class FFirebaseAuthException implements Exception {
 
       /// Invalid credential Exception
       case 'invalid-credential':
-      return 'The supplied credential is malformed or has expired, Please try again';
+        return 'The supplied credential is incorrect,  malformed, or has expire Please try again';
 
       /// User token revoked Exception
       case 'user-token-revoked':

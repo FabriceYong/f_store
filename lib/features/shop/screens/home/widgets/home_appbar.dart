@@ -1,5 +1,7 @@
 import 'package:f_store/common/products/cart/cart_counter_icon.dart';
 import 'package:f_store/common/widgets/appbar/appbar.dart';
+import 'package:f_store/common/widgets/shimmer/shimmer_effect.dart';
+import 'package:f_store/features/personalization/controllers/user_controller.dart';
 import 'package:f_store/features/shop/screens/cart/cart.dart';
 import 'package:f_store/utils/constants/colors.dart';
 import 'package:f_store/utils/constants/text_strings.dart';
@@ -13,6 +15,8 @@ class FHomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentUser = Get.put(UserController());
+
     return FAppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,13 +28,19 @@ class FHomeAppBar extends StatelessWidget {
                 .labelMedium!
                 .apply(color: FColors.grey),
           ),
-          Text(
-            FTexts.homeAppbarSubTitle,
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium!
-                .apply(color: FColors.white),
-          )
+          Obx(() {
+            if (currentUser.loading.value) {
+              return const FShimmerEffect(width: 80, height: 15);
+            } else {
+              return Text(
+                currentUser.user.value.fullName,
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineMedium!
+                    .apply(color: FColors.white),
+              );
+            }
+          })
         ],
       ),
       actions: [

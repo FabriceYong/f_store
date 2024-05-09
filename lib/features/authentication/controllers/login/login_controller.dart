@@ -23,8 +23,14 @@ class LoginController extends GetxController {
   void onInit() {
     super.onInit();
 
-    email.text = localStorage.read('REMEMBER_ME_EMAIL');
-    password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+    if (localStorage.hasData('REMEMBER_ME_EMAIL') &&
+        localStorage.hasData('REMEMBER_ME_PASSWORD')) {
+      email.text = localStorage.read('REMEMBER_ME_EMAIL');
+      password.text = localStorage.read('REMEMBER_ME_PASSWORD');
+    } else {
+      email.text = '';
+      password.text = '';
+    }
   }
 
   /// -- Email and Password Signin
@@ -63,6 +69,7 @@ class LoginController extends GetxController {
       // Redirect
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
+      print(e);
       FFullSCreenLoader.stopLoading();
       FLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
@@ -96,6 +103,7 @@ class LoginController extends GetxController {
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
       FLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      FFullSCreenLoader.stopLoading();
     }
   }
 }

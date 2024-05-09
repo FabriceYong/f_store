@@ -1,4 +1,4 @@
-import 'package:f_store/utils/constants/image_strings.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:f_store/utils/formatters/formatter.dart';
 
 /// Model class representing user data or information
@@ -61,25 +61,25 @@ class UserModel {
       'Username': username,
       'Email': email,
       'PhoneNumber': phoneNumber,
-      'ProfilePicture':
-          profilePicture == '' ? FImages.user_avatar : profilePicture,
+      'ProfilePicture': profilePicture,
     };
   }
 
-  /// Factory method to create a UserModel from a Firebase document snapshot.
-//   factory UserModel.fromSnapshot(
-//       DocumentSnapshot<Map<String, dynamic>> document) {
-//     if (document.data() != null) {
-//       final data = document.data()!;
-//       return UserModel(
-//           id: document.id,
-//           firstName: data['FirstName'] ?? '',
-//           lastName: data['LastName'] ?? '',
-//           username: data['Username'] ?? '',
-//           email: data['Email'] ?? '',
-//           phoneNumber: data['PhoneNumber'] ?? '',
-//           profilePicture: data['ProfilePicture'] ?? '');
-//     }
-//     return data;
-//   }
+  // / Factory method to create a UserModel from a Firebase document snapshot.
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return UserModel(
+          id: document.id,
+          firstName: data['FirstName'] ?? '',
+          lastName: data['LastName'] ?? '',
+          username: data['Username'] ?? '',
+          email: data['Email'] ?? '',
+          phoneNumber: data['PhoneNumber'] ?? '',
+          profilePicture: data['ProfilePicture'] ?? '');
+    } else {
+      return UserModel.empty();
+    }
+  }
 }

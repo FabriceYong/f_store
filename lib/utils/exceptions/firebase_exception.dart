@@ -54,8 +54,8 @@ class FFirebaseException implements Exception {
         return 'This operation is not allowed. Contact support for assistance';
 
       /// Invalid credential Exception
-      case 'invalid-credential':
-        return 'The supplied credential is malformed or has expired.';
+      // case 'invalid-credential':
+      //   return 'The supplied credential is malformed or has expired.';
 
       /// Invalid verification code Exception
       case 'invalid-verification':
